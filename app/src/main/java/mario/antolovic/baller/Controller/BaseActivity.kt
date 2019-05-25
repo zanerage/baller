@@ -1,4 +1,4 @@
-package mario.antolovic.baller
+package mario.antolovic.baller.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
