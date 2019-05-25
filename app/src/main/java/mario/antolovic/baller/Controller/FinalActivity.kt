@@ -3,9 +3,10 @@ package mario.antolovic.baller.Controller
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_final.*
+import mario.antolovic.baller.Model.Player
 import mario.antolovic.baller.R
-import mario.antolovic.baller.Utilities.EXTRA_LEAGUE
-import mario.antolovic.baller.Utilities.EXTRA_SKILL
+import mario.antolovic.baller.Utilities.EXTRA_PLAYER
+
 
 class FinalActivity : AppCompatActivity() {
 
@@ -14,10 +15,9 @@ class FinalActivity : AppCompatActivity() {
         setContentView(R.layout.activity_final)
 
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        searchLeagues.text = "Looking for $league $skill league near you..."
+        searchLeagues.text = "Looking for ${player.league} ${player.skill} league near you..."
 
     }
 }

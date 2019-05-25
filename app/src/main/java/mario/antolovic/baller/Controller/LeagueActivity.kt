@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
-import mario.antolovic.baller.Utilities.EXTRA_LEAGUE
+import mario.antolovic.baller.Model.Player
 import mario.antolovic.baller.R
+import mario.antolovic.baller.Utilities.EXTRA_PLAYER
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+
+    var player = Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,23 +22,23 @@ class LeagueActivity : BaseActivity() {
     fun mensClicked (view:View) {
          womensButton.isChecked = false
         coedButton.isChecked = false
-        selectedLeague = "mens"
+        player.league = "mens"
     }
      fun womensClicked (view: View){
       mensBtn.isChecked = false
          coedButton.isChecked = false
-         selectedLeague = "womens"
+         player.league = "womens"
      }
     fun coedClicked (view: View) {
         mensBtn.isChecked = false
         womensButton.isChecked= false
-        selectedLeague = "co-ed"
+        player.league = "co-ed"
 
     }
     fun leagueNextClicked(view:View) {
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillsActivity = Intent(this, SkillsActivity::class.java)
-            skillsActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillsActivity.putExtra(EXTRA_PLAYER,player)
             startActivity(skillsActivity)
         } else {
             Toast.makeText(this,"Please select a league.",Toast.LENGTH_SHORT).show()
