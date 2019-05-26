@@ -49,14 +49,14 @@
                 android:layout_height="wrap_content" android:id="@+id/beg_button" android:layout_weight="1"
                 android:textOff="@string/beginner" android:textOn="@string/beginner"
                 android:background="@drawable/baller_toogle" android:textColor="@android:color/background_light"
-                android:onClick="beginerClicked" android:layout_marginRight="20sp"/>
+                android:onClick="beginerClicked" android:layout_marginRight="20sp" android:layout_marginEnd="20sp"/>
         <ToggleButton
                 android:text="@string/baller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/baller_button" android:layout_weight="1"
                 android:textOff="@string/baller" android:textOn="@string/baller"
                 android:background="@drawable/baller_toogle" android:textColor="@android:color/background_light"
-                android:onClick="ballerClicked" android:layout_marginLeft="20sp"/>
+                android:onClick="ballerClicked" android:layout_marginLeft="20sp" android:layout_marginStart="20sp"/>
     </LinearLayout>
     <Button
             android:text="@string/finish"
